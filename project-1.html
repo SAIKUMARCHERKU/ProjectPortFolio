@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Case Study of Project 1</title>
+    <meta name="description" content="Case study page of Project" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/Saikumar.png"
+              alt="Saikumar Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Saikumar</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link">
+                Projects
+              </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-primary">Project 1</h1>
+        <div class="project-cs-hero__info">
+            <p class="text-primary">
+                This page contains the case study of 
+                Covid Data Exploration using Sql which includes the Project Overview, Tools Used and Live Links to the project.
+            </p>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="https://github.com/SAIKUMARCHERKU/DataAnalyst_PortFolio/tree/main/Covid19_Data_Exploration" class="btn btn--bg" target="_blank">Live Link</a>
+        </div>
+      </div>
+    </section>
+    <section class="project-details">
+      <div class="main-container">
+        <div class="project-details__content">
+          <div class="project-details__showcase-img-cont">
+            <img
+              src="./assets/jpeg/DataExploration.jpeg"
+              alt="Project Image"
+              class="project-details__showcase-img"
+            />
+          </div>
+          <div class="project-details__content-main">
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Project Overview</h3>
+              <p class="project-details__desc-para">
+                  In my project titled "Covid Data Exploration" that utilizes real-time COVID-19 data, I worked with several tables and data manipulations to analyze the impact of the pandemic in various ways. Here's a detailed report on the tables I formed and how I used them in my analysis:
+
+                  Tables Used:
+                  CovidDeaths:
+                  This table contains data on COVID-19 related deaths worldwide. It includes key fields such as location, date, total_cases, new_cases, total_deaths, and population.
+                  I used this table to examine trends in deaths, infection rates, and other metrics across different regions.
+                  CovidVaccinations:
+                  This table holds data on COVID-19 vaccinations worldwide. Important fields in this table include location, date, and new_vaccinations.
+                  I utilized this table to explore vaccination efforts and coverage in various locations.
+                  Data Analysis and Manipulations:
+                  Data Filtering:
+                  I filtered the data from the CovidDeaths table to focus on records where the continent field is not null.
+                  The data was sorted by location and date to streamline the analysis process.
+                  Total Cases vs. Total Deaths:
+                  I calculated the percentage of deaths compared to total cases in the United States to gain insight into the mortality rate.
+                  Total Cases vs. Population:
+                  Analyzed the percentage of the population infected with COVID-19 across different locations to understand the spread of the virus.
+                  Highest Infection Rate and Highest Percentage Population Infected:
+                  Grouped data by location to calculate the highest infection counts and percentage of the population infected. This helps identify areas with high infection rates and informs public health measures.
+                  Highest Death Count:
+                  Calculated the total death count for different locations and continents to highlight areas with the highest mortality rates.
+                  Global Numbers:
+                  Computed the sum of new cases, new deaths, and the death percentage globally to provide an overview of the worldwide impact of the pandemic.
+                  Percentage of Population Vaccinated:
+                  By joining the CovidDeaths and CovidVaccinations tables, I calculated the rolling number of people vaccinated and the percentage of the population that has received at least one vaccine dose.
+                  This helps track the progress of vaccination efforts.
+                  Creating Temporary Tables:
+                  I used temporary tables to calculate the percentage of the population vaccinated, including rolling people vaccinated, allowing for intermediate calculations and efficient analysis.
+                  Creating Views:
+                  Created a view named PercentPopulationVaccinated to store data for later visualizations.
+                  The view joins data from CovidDeaths and CovidVaccinations and calculates the rolling people vaccinated.
+                  Conclusion:
+                  My data exploration project involved using SQL queries to analyze real-time COVID-19 data from multiple perspectives. By filtering, grouping, and calculating various metrics, I gained insights into infection rates, death counts, and vaccination progress. These insights were visualized using Tableau for a comprehensive analysis of the pandemic's impact.
+                  The project showcases my abilities in data manipulation, analysis, and visualization.
+              </p>
+              <p class="project-details__desc-para">
+                  In the "Covid Data Exploration" project, 
+                  I analyzed real-time COVID-19 data using SQL to explore trends in cases,
+                  deaths, and vaccinations worldwide. By filtering and grouping data, 
+                  I identified key metrics such as mortality rates, infection rates, and 
+                  vaccination progress. The project showcases my skills in data manipulation, 
+                  analysis, and visualization using Tableau.
+              </p>
+            </div>
+            <div class="project-details__tools-used">
+              <h3 class="project-details__content-title">Tools Used</h3>
+              <div class="skills">
+                <div class="skills__skill">SQL</div>
+                <div class="skills__skill">Excel</div>
+                <div class="skills__skill">MS SQL Server Management Studio</div>
+                <div class="skills__skill">GIT</div>
+                <div class="skills__skill">GIT HUB</div>
+              </div>
+            </div>
+            <div class="project-details__links">
+              <h3 class="project-details__content-title">See Live</h3>
+              <a
+                href="#"
+                class="btn btn--med btn--theme project-details__links-btn"
+                target="_blank"
+                >Live Link</a
+              >
+              <a
+                href="#"
+                class="btn btn--med btn--theme-inv project-details__links-btn"
+                target="_blank"
+                >Code Link</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/twitter-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/yt-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon main-footer__icon--mr-none"
+                  src="./assets/png/insta-ico.png"
+                  alt="icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">John Doe</h4>
+            <p class="main-footer__short-desc">
+                An aspiring Data Analyst keen on delving into data intricacies,
+                contributing to insightful analysis and strategic decision-making for business growth
+            </p>
+          </div>
+        </div>
+
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Made by
+          <a rel="noreferrer" target="_blank" href="#"
+            >Saikumar</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
