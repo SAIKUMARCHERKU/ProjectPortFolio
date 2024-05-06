@@ -1,1 +1,5 @@
-Hello
+Hi, my name is Saikumar Cherku and I am a budding Data Analyst enthusiast!
+
+👩‍🎓I hold a master's degree in Computer Science from the University at University of Central Missouri. During my studies, I gained expertise in CS programming, Database Management, Dataflow Diagramming, and Data Warehousing. I have also completed multiple courses and obtained certifications in Machine Learning and Data Science. My passion lies in finding innovative and impactful ways to use data to solve real-world problems and create value for businesses and society.
+
+💻As a Data Consultant, my role involves utilizing my Computer Programming, Data Analysis, and Visualization skills to deliver high-quality solutions to various clients. I use various tools such as Python (Pandas, Keras), PySpark, and SQL (MySQL, PostgreSQL) to extract, transform, and load data, and develop predictive models using Machine Learning techniques. Additionally, I leverage tools like Power BI, Tableau, and KNIME to create compelling and interactive dashboards and reports that facilitate data-driven decision-making.
