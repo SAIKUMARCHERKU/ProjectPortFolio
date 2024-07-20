@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Case Study of Project 2</title>
+    <meta name="description" content="Case study page of Project" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/Saikumar.png"
+              alt="Saikumar Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Saikumar</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link">
+                Projects
+              </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-primary">Project  <br> EDA On World Layoffs</h1>
+        <div class="project-cs-hero__info">
+            <p class="text-primary">
+                This page contains the case study of 
+                Exploratory Data Analysis On World Layoffs using MySQL which includes the Project Overview, Tools Used and Live Links to the project.
+            </p>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="https://github.com/SAIKUMARCHERKU/DataAnalyst_PortFolio/tree/main/Exploratory%20Data%20Analysis(EDA)%20on%20World%20Layoffs%20Data%20using%20MySQL" class="btn btn--bg" target="_blank">Live Link</a>
+        </div>
+      </div>
+    </section>
+    <section class="project-details">
+      <div class="main-container">
+        <div class="project-details__content">
+          <div class="project-details__showcase-img-cont">
+            <img
+              src="./assets/jpeg/EDA_on_WorldLayoffs.jpeg"
+              alt="Project Image"
+              class="project-details__showcase-img"
+            />
+          </div>
+          <div class="project-details__content-main">
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Project Overview</h3>
+              <p class="project-details__desc-para">
+                  Let's go in DetailL
+                  <br /><strong>EDA:</strong>
+                  In my latest project involving the World_layoffs dataset, I extended my work beyond data cleaning to perform a comprehensive Exploratory Data Analysis (EDA) to uncover trends, patterns, and insights from the data. Here’s a detailed technical description of the EDA operations I conducted:
+                  1.	<b>Initial Data Exploration:</b>
+                  I started by examining the entire cleaned dataset to get an overview of the data structure and content. This step involved inspecting all records in the layoffs_staging2 table to familiarize myself with the data.
+                  <br>
+                  2.	<b>Basic Aggregations and Summaries:</b>
+                  I used aggregate functions to find key statistics such as the maximum and minimum values of total_laid_off and percentage_laid_off. This helped identify the scale of layoffs and the extent to which companies were affected.
+                  By selecting records where percentage_laid_off equaled 1, I identified companies that laid off their entire workforce. Further, I ordered these companies by their funds_raised_millions to understand the financial context of these complete layoffs.
+                  <br>
+                  3.	<b>Group By Aggregations:</b>
+                  Largest Single Layoff Events: I identified the top 5 single-day layoff events by ordering companies based on total_laid_off.
+                  Total Layoffs by Company: I aggregated layoffs by company to determine which companies had the most total layoffs across the dataset.
+                  Total Layoffs by Location: Similarly, I aggregated layoffs by location to see which areas were most affected.
+                  Total Layoffs by Country: Aggregating layoffs by country provided a macro view of the global impact.
+                  Annual Layoff Trends: I grouped layoffs by year to observe trends over time.
+                  Industry-Specific Layoffs: By grouping layoffs by industry, I identified which sectors were most affected.
+                  Company Stage Analysis: Grouping layoffs by the company’s stage provided insights into how company maturity (e.g., startup vs. established company) influenced layoff numbers.
+                  <br>
+                  4.	<b>Advanced Analysis with CTEs:</b>
+                  Yearly Layoffs by Company: I used Common Table Expressions (CTEs) to analyze layoffs by company on a yearly basis. This involved creating a ranking within each year to identify the top companies with the highest layoffs annually.
+                  Rolling Total of Layoffs: I calculated the rolling total of layoffs per month. This required converting the date to a year-month format and then summing layoffs for each month. A CTE was used to facilitate the rolling sum calculation, providing a continuous view of layoff trends over time.
+                  These operations provided a detailed and comprehensive analysis of the layoff data, revealing key trends and patterns. This project showcased my ability to perform in-depth exploratory data analysis, utilizing advanced SQL techniques such as window functions, CTEs, and various aggregation methods to extract meaningful insights from complex datasets. This experience demonstrates my proficiency in SQL and my analytical skills, making me adept at transforming raw data into actionable intelligence.
+                  
+                    
+                </p>
+              <p class="project-details__desc-para">
+                In my latest project titled "World Layoffs Exploratory Data Analysis (EDA)," I extended my efforts beyond data 
+                cleaning to perform a thorough EDA on the World_layoffs dataset using MySQL. This involved an initial data exploration 
+                to understand the dataset's structure, followed by various aggregations to uncover key statistics and trends. 
+                I conducted group by aggregations to identify the largest single layoff events, total layoffs by company, location, 
+                and country, as well as annual and industry-specific layoff trends. Advanced analysis using Common Table Expressions 
+                (CTEs) allowed me to examine yearly layoffs by company and calculate rolling totals of layoffs per month. 
+                This comprehensive analysis revealed significant patterns and insights, demonstrating my proficiency in SQL 
+                and my ability to extract actionable intelligence from complex datasets.
+              </p>
+            </div>
+            <div class="project-details__tools-used">
+              <h3 class="project-details__content-title">Tools Used</h3>
+              <div class="skills">
+                <div class="skills__skill">SQL</div>
+                <div class="skills__skill">MySQL</div>
+                <div class="skills__skill">EXCEL</div>
+                <div class="skills__skill">GIT</div>
+                <div class="skills__skill">GITHUB</div>
+              </div>
+            </div>
+            <div class="project-details__links">
+              <h3 class="project-details__content-title">See Live</h3>
+              <a
+                href="https://github.com/SAIKUMARCHERKU/DataAnalyst_PortFolio/tree/main/Exploratory%20Data%20Analysis(EDA)%20on%20World%20Layoffs%20Data%20using%20MySQL"
+                class="btn btn--med btn--theme project-details__links-btn"
+                target="_blank"
+                >Live Link</a
+              >
+              <a
+                href="https://github.com/SAIKUMARCHERKU/DataAnalyst_PortFolio/tree/main/Exploratory%20Data%20Analysis(EDA)%20on%20World%20Layoffs%20Data%20using%20MySQL"
+                class="btn btn--med btn--theme-inv project-details__links-btn"
+                target="_blank"
+                >Code Link</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/saikumar-cherku/">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/SAIKUMARCHERKU/DataAnalyst_PortFolio">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/twitter-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/yt-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon main-footer__icon--mr-none"
+                  src="./assets/png/insta-ico.png"
+                  alt="icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">Saikumar</h4>
+            <p class="main-footer__short-desc">
+                An aspiring Data Analyst keen on delving into data intricacies,
+                contributing to insightful analysis and strategic decision-making for business growth
+            </p>
+          </div>
+        </div>
+
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Made by
+          <a rel="noreferrer" target="_blank" href="#"
+            >Saikumar</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>

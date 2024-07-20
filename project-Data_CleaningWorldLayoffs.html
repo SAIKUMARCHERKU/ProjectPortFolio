@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Case Study of Project 2</title>
+    <meta name="description" content="Case study page of Project" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/Saikumar.png"
+              alt="Saikumar Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Saikumar</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link">
+                Projects
+              </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-primary">Data Cleaning using MySQL</h1>
+        <div class="project-cs-hero__info">
+            <p class="text-primary">
+                This page contains the case study of 
+                Cleaning Data on World_layoffs Data using MySql which includes the Project Overview, Tools Used and Live Links to the project.
+            </p>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="https://github.com/SAIKUMARCHERKU/DataAnalyst_PortFolio/tree/main/Data%20Cleaning%20on%20World%20Layoffs%20using%20MySQL" class="btn btn--bg" target="_blank">Live Link</a>
+        </div>
+      </div>
+    </section>
+    <section class="project-details">
+      <div class="main-container">
+        <div class="project-details__content">
+          <div class="project-details__showcase-img-cont">
+            <img
+              src="./assets/jpeg/DataCleaning_worldlayoffs.jpeg"
+              alt="Project Image"
+              class="project-details__showcase-img"
+            />
+          </div>
+          <div class="project-details__content-main">
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Project Overview</h3>
+              <p class="project-details__desc-para">
+                  Data Cleanig on World_layoffs Data Using MySql
+                  <br /><strong>Data Sources:</strong>
+                  In my project on data cleaning using the World_layoffs dataset, I performed a series of SQL operations to ensure data quality and consistency. Here’s a detailed and technical description of the steps I took:<br>
+                  1.	<b>Creating a Staging Table:</b> I created a staging table with the same structure as the original layoffs table. This was done using the CREATE TABLE ... LIKE syntax. The staging table served as a workspace to manipulate and clean the data while preserving the original dataset intact.
+                  Data was copied from the original table to the staging table using an INSERT ... SELECT statement. <br>
+                  2.	<b>Removing Duplicates:</b>
+                  I identified duplicates by using the ROW_NUMBER() window function partitioned by key columns such as company, location, industry, total_laid_off, percentage_laid_off, date, stage, country, and funds_raised_millions. This function assigned a unique row number to each duplicate group.
+                  I then created a common table expression (CTE) to select rows where the row number was greater than one, indicating duplicates.
+                  These duplicate rows were subsequently deleted from the staging table, ensuring that each record was unique.<br>
+                  3.	<b>Standardizing Data:</b>
+                  I standardized data entries to fix inconsistencies. For example, variations in the industry field (such as "Crypto Currency" and "CryptoCurrency") were standardized to a single value ("Crypto").
+                  I addressed inconsistent country names by removing trailing periods using the TRIM function.
+                  The industry field had missing values (nulls) and blanks which were first set to null for easier handling. I then populated these null values by joining the table with itself and using existing non-null values from other rows with the same company.
+                  <br>
+                  4.	<b>Handling Null Values:</b>
+                  I reviewed the null values in critical columns such as industry. For missing industry values, I used a self-join to fill in these gaps wherever possible, ensuring no data was lost.
+                  I decided to retain null values in numerical columns like total_laid_off and funds_raised_millions, as these could be meaningful for future analyses.
+                  <br>
+                  5.	<b>Formatting Date Columns:</b>
+                  The date field initially contained string values in various formats. I converted these strings to a standardized date format using the STR_TO_DATE function.
+                  Once converted, I altered the column to use the DATE data type, ensuring consistency and enabling date-based operations and analyses.
+                  <br>
+                  6.	<b>Removing Unnecessary Data:</b>
+                  I identified and removed rows that contained null values in both total_laid_off and percentage_laid_off columns since such records were deemed non-informative.
+                    This cleanup ensured that only relevant and complete data was retained, improving the dataset's overall quality.
+                  By following these steps, I ensured the World_layoffs dataset was clean, standardized, and ready for further analysis. These operations demonstrated my proficiency in SQL and my ability to handle complex data cleaning tasks, including duplicate removal, data standardization, handling null values, and ensuring consistent data formats. This project highlights my capability to prepare real-world datasets for accurate and efficient data analysis
+                  
+                </p>
+              <p class="project-details__desc-para">
+                In my MySQL project titled "World Layoffs Data Cleaning," I meticulously cleaned and standardized the World_layoffs
+                dataset to ensure data quality and consistency. By creating a staging table, I preserved the original data while 
+                performing necessary manipulations. This involved removing duplicates using advanced window functions, standardizing 
+                entries for consistency, addressing null values with strategic self-joins, and formatting date columns for uniformity. 
+                Additionally, I eliminated non-informative records to retain only relevant data. These operations highlighted my 
+                proficiency in SQL and my ability to handle complex data cleaning tasks, preparing the dataset for accurate and 
+                efficient analysis.
+              </p>
+            </div>
+            <div class="project-details__tools-used">
+              <h3 class="project-details__content-title">Tools Used</h3>
+              <div class="skills">
+                <div class="skills__skill">SQL</div>
+                <div class="skills__skill">MySQL</div>
+                <div class="skills__skill">EXCEL</div>
+                <div class="skills__skill">GIT</div>
+                <div class="skills__skill">GITHUB</div>
+              </div>
+            </div>
+            <div class="project-details__links">
+              <h3 class="project-details__content-title">See Live</h3>
+              <a
+                href="https://github.com/SAIKUMARCHERKU/DataAnalyst_PortFolio/tree/main/Data%20Cleaning%20on%20World%20Layoffs%20using%20MySQL"
+                class="btn btn--med btn--theme project-details__links-btn"
+                target="_blank"
+                >Live Link</a
+              >
+              <a
+                href="https://github.com/SAIKUMARCHERKU/DataAnalyst_PortFolio/tree/main/Data%20Cleaning%20on%20World%20Layoffs%20using%20MySQL"
+                class="btn btn--med btn--theme-inv project-details__links-btn"
+                target="_blank"
+                >Code Link</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/saikumar-cherku/">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/SAIKUMARCHERKU/DataAnalyst_PortFolio">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/twitter-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/yt-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon main-footer__icon--mr-none"
+                  src="./assets/png/insta-ico.png"
+                  alt="icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">Saikumar</h4>
+            <p class="main-footer__short-desc">
+                An aspiring Data Analyst keen on delving into data intricacies,
+                contributing to insightful analysis and strategic decision-making for business growth
+            </p>
+          </div>
+        </div>
+
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Made by
+          <a rel="noreferrer" target="_blank" href="#"
+            >Saikumar</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
